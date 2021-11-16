@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="99.0" minWidth="160.0" prefHeight="306.0" prefWidth="272.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs3211.discountFinder.view.DiscountFinderCodeBehind">
+   <children>
+      <TextField fx:id="filterTextBox" layoutX="90.0" layoutY="42.0" prefHeight="25.0" prefWidth="134.0" />
+      <Button fx:id="addFilterButton" disable="true" layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleAddFilter" text="Add Filter" />
+      <ListView fx:id="discountList" layoutX="14.0" layoutY="90.0" prefHeight="195.0" prefWidth="210.0" />
+      <Button fx:id="clearFilterButton" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleClearFilter" prefHeight="25.0" prefWidth="210.0" text="Clear Filter" />
+      <Label fx:id="labelText" layoutX="41.0" layoutY="67.0" prefHeight="17.0" prefWidth="168.0" text="There are no Discounts" textFill="#ef3507" visible="false" />
+   </children>
+</AnchorPane>
