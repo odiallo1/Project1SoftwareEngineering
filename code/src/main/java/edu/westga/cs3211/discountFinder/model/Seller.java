@@ -4,6 +4,7 @@
 package edu.westga.cs3211.discountFinder.model;
 
 /**
+ * the seller class
  * @author Oumar Diallo
  *
  */
@@ -23,7 +24,7 @@ public class Seller {
 	 * @return the zip code
 	 */
 	public int getZipCode() {
-		return zipCode;
+		return this.zipCode;
 	}
 
 	/**
@@ -32,7 +33,7 @@ public class Seller {
 	 * @return the seller name
 	 */
 	public String getSellerName() {
-		return sellerName;
+		return this.sellerName;
 	}
 
 }

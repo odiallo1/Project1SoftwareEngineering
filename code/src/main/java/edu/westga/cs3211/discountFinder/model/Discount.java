@@ -14,11 +14,13 @@ public class Discount {
     
     private Seller discountSeller;
     
+
     /**
      * Instantiates a new discount.
      *
      * @param item the item
      * @param discountPrice the discount price
+     * @param discountSeller the discount seller
      */
     public Discount(Item item,  double discountPrice, Seller discountSeller) {
         this.item = item;
@@ -51,7 +53,7 @@ public class Discount {
 	 * @return the discount seller
 	 */
 	public Seller getDiscountSeller() {
-		return discountSeller;
+		return this.discountSeller;
 	}
     
     @Override
