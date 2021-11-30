@@ -1,0 +1,9 @@
+Use Case: Filter By Category
+Context: Discount set has already been found/loaded
+Main Scenario:
+1. User selects an item category from the category dropdown
+2. Discounts are found that fit the filtered parameters
+3. The found discounts are displayed to the user
+Alternative Flow: 
+2a. No discounts from store are found
+2a1. User is displayed a message conveying that no matching deals have been found
