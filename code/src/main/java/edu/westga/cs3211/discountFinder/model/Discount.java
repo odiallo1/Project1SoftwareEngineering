@@ -29,7 +29,7 @@ public class Discount {
         this.discountPrice = discountPrice;
         this.discountSeller = discountSeller;
 
-     */
+     
     public Discount(Item item,  double discountPrice) {
         this.item = item;
         this.discountPrice = discountPrice;
