@@ -45,7 +45,7 @@ public class DiscountFinderCodeBehind {
     
     @FXML
     void handleAddFilter(ActionEvent event) {
-    	this.discountList.itemsProperty().set(this.vm.filter(this.filterTextBox.getText()));
+    	this.discountList.itemsProperty().set(this.vm.filterItem(this.filterTextBox.getText()));
 
     }
     
