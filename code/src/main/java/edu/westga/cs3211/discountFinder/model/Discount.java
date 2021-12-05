@@ -12,16 +12,24 @@ public class Discount {
     
     private double discountPrice;
     
+    private Seller discountSeller;
+    
+
+
     /**
      * Instantiates a new discount.
      *
      * @param item the item
      * @param discountPrice the discount price
+
+     * @param discountSeller the discount seller
      */
-    public Discount(Item item,  double discountPrice) {
+    public Discount(Item item,  double discountPrice, Seller discountSeller) {
         this.item = item;
         this.discountPrice = discountPrice;
-    }
+        this.discountSeller = discountSeller;
+	}
+
 
     /**
      * Gets the item.
@@ -42,8 +50,19 @@ public class Discount {
         return this.discountPrice;
     }
     
+
+	/**
+	 * Gets the discount seller.
+	 *
+	 * @return the discount seller
+	 */
+	public Seller getDiscountSeller() {
+		return this.discountSeller;
+	}
+    
     @Override
     public String toString() {
     	return "Item: " + this.item.getItemName() + " Discount Price " + this.discountPrice;
     }
+
 }

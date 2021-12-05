@@ -5,6 +5,9 @@ import java.util.List;
 
 import edu.westga.cs3211.discountFinder.model.Discount;
 import edu.westga.cs3211.discountFinder.model.Item;
+
+import edu.westga.cs3211.discountFinder.model.Seller;
+
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -34,24 +37,30 @@ public class DiscountFinderViewModel {
 	 */
 	public void populateDiscountFinderList() {
 		Item apple = new Item("apple", 20.35);
-		Discount first = new Discount(apple, 15.67);
+
+		Seller walMart = new Seller("Wal-Mart", 30215);
+		Discount first = new Discount(apple, 15.67, walMart);
 		
 		Item milk = new Item("milk", 20.35);
-		Discount second = new Discount(milk, 15.67);
+		Seller target = new Seller("Target", 30119);
+		Discount second = new Discount(milk, 15.67, target);
 		
 		Item cheese1 = new Item("cheese1", 20.35);
-		Discount third = new Discount(cheese1, 15.67);
+		Seller foodDepot = new Seller("Food-Depot", 30317);
+		Discount third = new Discount(cheese1, 15.67, foodDepot);
 		
 		Item cheese = new Item("cheese", 20.35);
-		Discount fourth = new Discount(cheese, 15.67);
+		Seller kroger = new Seller("Kroger", 30216);
+		Discount fourth = new Discount(cheese, 15.67, kroger);
 		
 		Item oranges = new Item("oranges", 20.35);
-		Discount fifth = new Discount(oranges, 15.67);
+		Seller aldi = new Seller("Aldi", 30218);
+		Discount fifth = new Discount(oranges, 15.67, aldi);
 		
 		Item broccoli = new Item("broccoli", 20.35);
-		Discount sixth = new Discount(broccoli, 15.67);
-		
-		
+		Seller ingles = new Seller("Ingles", 30215);
+		Discount sixth = new Discount(broccoli, 15.67, ingles);
+
 		this.discountListProperty.add(first);
 		this.discountListProperty.add(second);
 		this.discountListProperty.add(third);

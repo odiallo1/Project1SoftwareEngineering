@@ -1,8 +1,0 @@
-Use Case: Favorite/Unfavorite A Seller
-Context: Discount set has already been found/loaded
-Main Scenario:
-1. User selects an item
-2. User clicks “Favorite Seller” button
-3. Seller not in favorites list is added to favorites list
-Alternative Flow: 
-3a.  Seller in favorites list is removed from favorites list
