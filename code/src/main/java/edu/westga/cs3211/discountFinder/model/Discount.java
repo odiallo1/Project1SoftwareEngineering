@@ -58,8 +58,8 @@ public class Discount {
     
     @Override
     public String toString() {
-    	return "Item: " + this.item.getItemName() + 
-    			System.lineSeparator() + "Discount Price " + this.discountPrice 
+    	return "Item: " + this.item.getItemName()  
+    			+ System.lineSeparator() + "Discount Price " + this.discountPrice 
     			+ System.lineSeparator() + "Store: " + this.discountSeller.getSellerName();
     }
 
