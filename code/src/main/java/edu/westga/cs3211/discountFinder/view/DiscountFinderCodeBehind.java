@@ -1,6 +1,8 @@
 package edu.westga.cs3211.discountFinder.view;
 
 
+import org.controlsfx.control.textfield.TextFields;
+
 import edu.westga.cs3211.discountFinder.model.Discount;
 import edu.westga.cs3211.discountFinder.viewModel.DiscountFinderViewModel;
 import javafx.event.ActionEvent;
@@ -41,6 +43,8 @@ public class DiscountFinderCodeBehind {
     	this.discountList.itemsProperty().set(this.vm.discountListProperty()); 
     	this.discountListListener();
     	this.filterTextBoxListener();
+    	String[] words = {"apple", "milk", "cinnamon"};
+    	TextFields.bindAutoCompletion(this.filterTextBox, words);
     }
     
     @FXML
