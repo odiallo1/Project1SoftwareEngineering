@@ -5,9 +5,11 @@ import org.controlsfx.control.textfield.TextFields;
 
 import edu.westga.cs3211.discountFinder.model.Discount;
 import edu.westga.cs3211.discountFinder.viewModel.DiscountFinderViewModel;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -32,6 +34,9 @@ public class DiscountFinderCodeBehind {
     @FXML
     private Label labelText;
     
+    @FXML
+    private ComboBox<String> filterComboBox;
+    
     private DiscountFinderViewModel vm;
     
     public DiscountFinderCodeBehind() {
@@ -44,6 +49,7 @@ public class DiscountFinderCodeBehind {
     	this.discountListListener();
     	this.filterTextBoxListener();
     	String[] words = {"apple", "milk", "cinnamon"};
+    	this.filterComboBox.itemsProperty().set(FXCollections.observableArrayList(words));
     	TextFields.bindAutoCompletion(this.filterTextBox, words);
     }
     
