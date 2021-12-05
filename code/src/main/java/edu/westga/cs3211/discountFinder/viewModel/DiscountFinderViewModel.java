@@ -61,25 +61,6 @@ public class DiscountFinderViewModel {
 		Seller ingles = new Seller("Ingles", 30215);
 		Discount sixth = new Discount(broccoli, 15.67, ingles);
 
-		Discount first = new Discount(apple, 15.67);
-		
-		Item milk = new Item("milk", 20.35);
-		Discount second = new Discount(milk, 15.67);
-		
-		Item cheese1 = new Item("cheese1", 20.35);
-		Discount third = new Discount(cheese1, 15.67);
-		
-		Item cheese = new Item("cheese", 20.35);
-		Discount fourth = new Discount(cheese, 15.67);
-		
-		Item oranges = new Item("oranges", 20.35);
-		Discount fifth = new Discount(oranges, 15.67);
-		
-		Item broccoli = new Item("broccoli", 20.35);
-		Discount sixth = new Discount(broccoli, 15.67);
-
-		
-		
 		this.discountListProperty.add(first);
 		this.discountListProperty.add(second);
 		this.discountListProperty.add(third);
