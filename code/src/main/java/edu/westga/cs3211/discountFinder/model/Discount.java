@@ -29,7 +29,12 @@ public class Discount {
         this.discountPrice = discountPrice;
         this.discountSeller = discountSeller;
 
-     
+    /**
+     * Instantiates a new discount.
+     *
+     * @param item the item
+     * @param discountPrice the discount price
+     */ 
     public Discount(Item item,  double discountPrice) {
         this.item = item;
         this.discountPrice = discountPrice;
