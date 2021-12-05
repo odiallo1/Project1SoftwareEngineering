@@ -28,7 +28,7 @@ public class Discount {
         this.item = item;
         this.discountPrice = discountPrice;
         this.discountSeller = discountSeller;
-
+	}
 
 
     /**
