@@ -77,11 +77,36 @@ public class DiscountFinderViewModel {
 		return this.discountListProperty;
 	}
 	
-	public ObservableList<Discount> filter(String item) {
+	/**
+	 * Filter item.
+	 *
+	 * @param item the item
+	 * @return the observable list
+	 */
+	public ObservableList<Discount> filterItem(String item) {
 		List<Discount> filtered = new ArrayList<Discount>();
 		
 		for (Discount currentItem: this.discountListProperty) {
 			if (currentItem.getItem().getItemName().equalsIgnoreCase(item)) {
+				filtered.add(currentItem);
+			}
+		}
+		
+		return FXCollections.observableArrayList(filtered);
+		
+	}
+	
+	/**
+	 * Filter store.
+	 *
+	 * @param store the store
+	 * @return the observable list
+	 */
+	public ObservableList<Discount> filterStore(String store) {
+		List<Discount> filtered = new ArrayList<Discount>();
+		
+		for (Discount currentItem: this.discountListProperty) {
+			if (currentItem.getDiscountSeller().getSellerName().equalsIgnoreCase(store)) {
 				filtered.add(currentItem);
 			}
 		}
