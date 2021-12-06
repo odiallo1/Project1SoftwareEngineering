@@ -1,10 +1,11 @@
 package edu.westga.cs3211.discountFinder.testViewModel;
 
-import static org.junit.Assert.assertEquals;
+
 
 
 import java.util.ArrayList;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import edu.westga.cs3211.discountFinder.model.Discount;
@@ -28,7 +29,7 @@ public class testFilterItem {
 		DiscountFinderViewModel viewM = new DiscountFinderViewModel();
 		ObservableList<Discount> oneDiscount = viewM.filterItem("grapes");
 		
-		assertEquals(true, oneDiscount.isEmpty());
+		Assert.assertEquals(true, oneDiscount.isEmpty());
 	}
 	
 	@Test
@@ -43,7 +44,7 @@ public class testFilterItem {
 		DiscountFinderViewModel viewM = new DiscountFinderViewModel();
 		ObservableList<Discount> oneDiscount = viewM.filterItem("oranges");
 		
-		assertEquals("Aldi", oneDiscount.get(0).getDiscountSeller().getSellerName());
+		Assert.assertEquals("Aldi", oneDiscount.get(0).getDiscountSeller().getSellerName());
 	}
 
 }
