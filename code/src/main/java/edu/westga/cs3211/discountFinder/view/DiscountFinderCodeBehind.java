@@ -1,7 +1,7 @@
 package edu.westga.cs3211.discountFinder.view;
 
 
-import org.controlsfx.control.textfield.TextFields;
+
 
 import edu.westga.cs3211.discountFinder.model.Discount;
 import edu.westga.cs3211.discountFinder.viewModel.DiscountFinderViewModel;
@@ -56,10 +56,9 @@ public class DiscountFinderCodeBehind {
     	this.filterComboBox.getSelectionModel().select(0);
     	
     	String[] items = {"apple", "milk", "broccoli", "oranges", "Ingles", "Wal-Mart", "Aldi", "Food Depot"};
-		  TextFields.bindAutoCompletion(this.filterTextBox, items);
+		TextFields.bindAutoCompletion(this.filterTextBox, items);
 
-    	String[] words = {"apple", "milk", "cinnamon"};
-    	TextFields.bindAutoCompletion(this.filterTextBox, words);
+  
     }
     
     @FXML
