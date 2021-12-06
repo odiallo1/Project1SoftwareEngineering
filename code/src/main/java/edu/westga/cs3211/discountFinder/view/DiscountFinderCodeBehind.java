@@ -47,7 +47,7 @@ public class DiscountFinderCodeBehind {
     public void initialize() {
     	this.discountList.itemsProperty().set(this.vm.discountListProperty()); 
     	this.discountListListener();
-    	this.comboBoxListener();
+  
     	this.filterTextBoxListener();
     	
     	String[] filterByOptions = {"Item", "Store"};
@@ -103,15 +103,7 @@ public class DiscountFinderCodeBehind {
     	});
     }
     
-    private void comboBoxListener() {
-    	this.filterComboBox.selectionModelProperty().addListener((observable, oldValue, newValue) -> {
-    		if (observable.getValue().isEmpty()) {
-    			this.addFilterButton.disableProperty().set(true);
-    		} else {
-    			this.addFilterButton.disableProperty().set(false);
-    		}
-    	});
-    }
+
     
     
     
