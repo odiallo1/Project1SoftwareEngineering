@@ -13,6 +13,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import org.controlsfx.control.textfield.TextFields;
 
 public class DiscountFinderCodeBehind {
 
@@ -55,7 +56,10 @@ public class DiscountFinderCodeBehind {
     	this.filterComboBox.getSelectionModel().select(0);
     	
     	String[] items = {"apple", "milk", "broccoli", "oranges", "Ingles", "Wal-Mart", "Aldi", "Food Depot"};
-		TextFields.bindAutoCompletion(this.filterTextBox, items);
+		  TextFields.bindAutoCompletion(this.filterTextBox, items);
+
+    	String[] words = {"apple", "milk", "cinnamon"};
+    	TextFields.bindAutoCompletion(this.filterTextBox, words);
     }
     
     @FXML

@@ -5,7 +5,9 @@ import java.util.List;
 
 import edu.westga.cs3211.discountFinder.model.Discount;
 import edu.westga.cs3211.discountFinder.model.Item;
+
 import edu.westga.cs3211.discountFinder.model.Seller;
+
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -35,6 +37,7 @@ public class DiscountFinderViewModel {
 	 */
 	public void populateDiscountFinderList() {
 		Item apple = new Item("apple", 20.35);
+
 		Seller walMart = new Seller("Wal-Mart", 30215);
 		Discount first = new Discount(apple, 15.67, walMart);
 		
@@ -57,8 +60,7 @@ public class DiscountFinderViewModel {
 		Item broccoli = new Item("broccoli", 20.35);
 		Seller ingles = new Seller("Ingles", 30215);
 		Discount sixth = new Discount(broccoli, 15.67, ingles);
-		
-		
+
 		this.discountListProperty.add(first);
 		this.discountListProperty.add(second);
 		this.discountListProperty.add(third);

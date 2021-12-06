@@ -14,7 +14,7 @@ public class Discount {
     
     private Seller discountSeller;
     
-
+  
     /**
      * Instantiates a new discount.
      *
@@ -26,7 +26,8 @@ public class Discount {
         this.item = item;
         this.discountPrice = discountPrice;
         this.discountSeller = discountSeller;
-    }
+	}
+
 
     /**
      * Gets the item.
@@ -47,6 +48,7 @@ public class Discount {
         return this.discountPrice;
     }
     
+
 	/**
 	 * Gets the discount seller.
 	 *
@@ -62,6 +64,5 @@ public class Discount {
     			+ System.lineSeparator() + "Discount Price " + this.discountPrice 
     			+ System.lineSeparator() + "Store: " + this.discountSeller.getSellerName();
     }
-
 
 }

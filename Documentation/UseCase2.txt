@@ -1,0 +1,9 @@
+Use Case: Item Filter
+Context: Default discount set has already been found/loaded
+Main Scenario:
+1. User applies filter to discount results
+2. Discounts are found that fit the filtered parameters
+3. The found discounts are displayed to the user
+Alternative Flow: 
+2a. No discounts are found that fit the parameters
+2a1. User is displayed a message conveying that no matching deals have been found

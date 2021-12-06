@@ -1,0 +1,9 @@
+Use Case: Find Discounts
+Context: None
+Main Scenario: 
+1. App aggregates all unfiltered discounts
+2. Discounts are found
+3. Display all found discounts to the user
+Alternative flow: 
+2a. No discounts are found
+2a1. Display a message to the user telling them no discounts were found
