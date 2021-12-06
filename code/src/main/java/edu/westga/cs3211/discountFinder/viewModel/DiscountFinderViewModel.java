@@ -42,7 +42,7 @@ public class DiscountFinderViewModel {
 		Seller target = new Seller("Target", 30119);
 		Discount second = new Discount(milk, 15.67, target);
 		
-		Item cheese1 = new Item("cheese1", 20.35);
+		Item cheese1 = new Item("cheese1", 3.35);
 		Seller foodDepot = new Seller("Food-Depot", 30317);
 		Discount third = new Discount(cheese1, 15.67, foodDepot);
 		
