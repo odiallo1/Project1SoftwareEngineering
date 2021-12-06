@@ -45,7 +45,7 @@ public class DiscountFinderViewModel {
 		Seller target = new Seller("Target", 30119);
 		Discount second = new Discount(milk, 15.67, target);
 		
-		Item cheese1 = new Item("cheese1", 20.35);
+		Item cheese1 = new Item("cheese1", 3.35);
 		Seller foodDepot = new Seller("Food-Depot", 30317);
 		Discount third = new Discount(cheese1, 15.67, foodDepot);
 		
@@ -79,11 +79,36 @@ public class DiscountFinderViewModel {
 		return this.discountListProperty;
 	}
 	
-	public ObservableList<Discount> filter(String item) {
+	/**
+	 * Filter item.
+	 *
+	 * @param item the item
+	 * @return the observable list
+	 */
+	public ObservableList<Discount> filterItem(String item) {
 		List<Discount> filtered = new ArrayList<Discount>();
 		
 		for (Discount currentItem: this.discountListProperty) {
 			if (currentItem.getItem().getItemName().equalsIgnoreCase(item)) {
+				filtered.add(currentItem);
+			}
+		}
+		
+		return FXCollections.observableArrayList(filtered);
+		
+	}
+	
+	/**
+	 * Filter store.
+	 *
+	 * @param store the store
+	 * @return the observable list
+	 */
+	public ObservableList<Discount> filterStore(String store) {
+		List<Discount> filtered = new ArrayList<Discount>();
+		
+		for (Discount currentItem: this.discountListProperty) {
+			if (currentItem.getDiscountSeller().getSellerName().equalsIgnoreCase(store)) {
 				filtered.add(currentItem);
 			}
 		}
