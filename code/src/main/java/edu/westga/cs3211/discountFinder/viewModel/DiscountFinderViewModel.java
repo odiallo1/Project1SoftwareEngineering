@@ -38,7 +38,7 @@ public class DiscountFinderViewModel {
 	public void populateDiscountFinderList() {
 		Item apple = new Item("apple", 20.35);
 		Seller walMart = new Seller("Wal-Mart", 30215);
-		Discount first = new Discount(apple, 15.67, walMart);
+		Discount first = new Discount(apple, 11.67, walMart);
 		
 		Item milk = new Item("milk", 20.35);
 		Seller target = new Seller("Target", 30119);
