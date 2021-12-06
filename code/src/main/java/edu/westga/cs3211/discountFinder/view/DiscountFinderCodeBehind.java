@@ -55,7 +55,7 @@ public class DiscountFinderCodeBehind {
     	this.filterComboBox.itemsProperty().set(FXCollections.observableArrayList(filterByOptions));
     	this.filterComboBox.getSelectionModel().select(0);
     	
-    	String[] items = {"apple", "milk", "broccoli", "oranges", "Ingles", "Wal-Mart", "Aldi", "Food Depot"};
+    	String[] items = {"apple", "milk", "broccoli", "oranges", "cheese", "Wal-Mart", "Aldi", "Food Depot"};
 		TextFields.bindAutoCompletion(this.filterTextBox, items);
 
   
