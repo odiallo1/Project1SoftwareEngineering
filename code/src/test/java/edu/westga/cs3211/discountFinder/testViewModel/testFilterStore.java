@@ -25,20 +25,16 @@ class testFilterStore {
 		Assert.assertEquals(true, oneDiscount.isEmpty());
 	}
 	
-	@SuppressWarnings("deprecation")
+	
 	@Test
 	void testSomeDiscountsForStore() {
-		Item oranges = new Item("oranges", 20.35);
-		Seller aldi = new Seller("Aldi", 30218);
-		Discount fifth = new Discount(oranges, 15.67, aldi);
-		ArrayList<Discount> orangeDiscount = new ArrayList<Discount>();
 		
-		ObservableList<Discount> orange = FXCollections.observableArrayList(orangeDiscount);
+		String walmart = "Wal-Mart";
 		
 		DiscountFinderViewModel viewM = new DiscountFinderViewModel();
-		ObservableList<Discount> oneDiscount = viewM.filterStore("Wal-Mart");
+		ObservableList<Discount> oneDiscount = viewM.filterStore(walmart);
 		
-		Assert.assertEquals("Wal-Mart", oneDiscount.get(0).getDiscountSeller().getSellerName());
+		Assert.assertEquals(walmart, oneDiscount.get(0).getDiscountSeller().getSellerName());
 		Assert.assertEquals(11.67, oneDiscount.get(0).getDiscountPrice(), .1);
 		Assert.assertEquals(true, oneDiscount.get(0).toString().contains("apple"));
 		Assert.assertEquals(30215, oneDiscount.get(0).getDiscountSeller().getZipCode());

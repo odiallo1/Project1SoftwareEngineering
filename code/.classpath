@@ -31,6 +31,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Users/odiallo1/Downloads/junit-4.12.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
