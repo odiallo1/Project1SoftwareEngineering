@@ -14,14 +14,12 @@ public class Discount {
     
     private Seller discountSeller;
     
-
-
+  
     /**
      * Instantiates a new discount.
      *
      * @param item the item
      * @param discountPrice the discount price
-
      * @param discountSeller the discount seller
      */
     public Discount(Item item,  double discountPrice, Seller discountSeller) {
@@ -62,7 +60,9 @@ public class Discount {
     
     @Override
     public String toString() {
-    	return "Item: " + this.item.getItemName() + " Discount Price " + this.discountPrice;
+    	return "Item: " + this.item.getItemName()  
+    			+ System.lineSeparator() + "Discount Price " + this.discountPrice 
+    			+ System.lineSeparator() + "Store: " + this.discountSeller.getSellerName();
     }
 
 }

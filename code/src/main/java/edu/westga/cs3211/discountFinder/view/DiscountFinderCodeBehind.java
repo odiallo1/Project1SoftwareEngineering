@@ -1,11 +1,15 @@
 package edu.westga.cs3211.discountFinder.view;
 
 
+
+
 import edu.westga.cs3211.discountFinder.model.Discount;
 import edu.westga.cs3211.discountFinder.viewModel.DiscountFinderViewModel;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -31,6 +35,9 @@ public class DiscountFinderCodeBehind {
     @FXML
     private Label labelText;
     
+    @FXML
+    private ComboBox<String> filterComboBox;
+    
     private DiscountFinderViewModel vm;
     
     public DiscountFinderCodeBehind() {
@@ -41,20 +48,41 @@ public class DiscountFinderCodeBehind {
     public void initialize() {
     	this.discountList.itemsProperty().set(this.vm.discountListProperty()); 
     	this.discountListListener();
+  
     	this.filterTextBoxListener();
-    	String[] words = {"apple", "milk", "cinnamon"};
-    	TextFields.bindAutoCompletion(this.filterTextBox, words);
+    	
+    	String[] filterByOptions = {"Item", "Store"};
+    	this.filterComboBox.itemsProperty().set(FXCollections.observableArrayList(filterByOptions));
+    	this.filterComboBox.getSelectionModel().select(0);
+    	
+    	String[] items = {"apple", "milk", "broccoli", "oranges", "cheese", "Wal-Mart", "Aldi", "Food Depot"};
+		TextFields.bindAutoCompletion(this.filterTextBox, items);
+
+  
     }
     
     @FXML
     void handleAddFilter(ActionEvent event) {
-    	this.discountList.itemsProperty().set(this.vm.filter(this.filterTextBox.getText()));
+
+    	if (this.filterComboBox.selectionModelProperty().get().getSelectedItem().equals("Item")) {
+    		this.discountList.itemsProperty().set(this.vm.filterItem(this.filterTextBox.getText()));
+    		
+    		
+    	} else if (this.filterComboBox.selectionModelProperty().get().getSelectedItem().equals("Store")) {
+    		this.discountList.itemsProperty().set(this.vm.filterStore(this.filterTextBox.getText()));
+    		
+    	} else {
+    		this.initialize();
+    	}
+    	
+    	
 
     }
     
     @FXML
     void handleClearFilter(ActionEvent event) {
     	this.initialize();
+    	this.filterTextBox.textProperty().set("");
     }
     
     private void discountListListener() {
@@ -77,6 +105,8 @@ public class DiscountFinderCodeBehind {
     		}
     	});
     }
+    
+
     
     
     

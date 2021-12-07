@@ -37,19 +37,19 @@ public class DiscountFinderViewModel {
 	 */
 	public void populateDiscountFinderList() {
 		Item apple = new Item("apple", 20.35);
-
 		Seller walMart = new Seller("Wal-Mart", 30215);
-		Discount first = new Discount(apple, 15.67, walMart);
+		Discount first = new Discount(apple, 11.67, walMart);
 		
 		Item milk = new Item("milk", 20.35);
 		Seller target = new Seller("Target", 30119);
 		Discount second = new Discount(milk, 15.67, target);
 		
-		Item cheese1 = new Item("cheese1", 20.35);
+		String dairy = "cheese";
+		Item cheese1 = new Item(dairy, 3.35);
 		Seller foodDepot = new Seller("Food-Depot", 30317);
 		Discount third = new Discount(cheese1, 15.67, foodDepot);
 		
-		Item cheese = new Item("cheese", 20.35);
+		Item cheese = new Item(dairy, 20.35);
 		Seller kroger = new Seller("Kroger", 30216);
 		Discount fourth = new Discount(cheese, 15.67, kroger);
 		
@@ -58,8 +58,7 @@ public class DiscountFinderViewModel {
 		Discount fifth = new Discount(oranges, 15.67, aldi);
 		
 		Item broccoli = new Item("broccoli", 20.35);
-		Seller ingles = new Seller("Ingles", 30215);
-		Discount sixth = new Discount(broccoli, 15.67, ingles);
+		Discount sixth = new Discount(broccoli, 15.67, aldi);
 
 		this.discountListProperty.add(first);
 		this.discountListProperty.add(second);
@@ -79,11 +78,36 @@ public class DiscountFinderViewModel {
 		return this.discountListProperty;
 	}
 	
-	public ObservableList<Discount> filter(String item) {
+	/**
+	 * Filter item.
+	 *
+	 * @param item the item
+	 * @return the observable list
+	 */
+	public ObservableList<Discount> filterItem(String item) {
 		List<Discount> filtered = new ArrayList<Discount>();
 		
 		for (Discount currentItem: this.discountListProperty) {
 			if (currentItem.getItem().getItemName().equalsIgnoreCase(item)) {
+				filtered.add(currentItem);
+			}
+		}
+		
+		return FXCollections.observableArrayList(filtered);
+		
+	}
+	
+	/**
+	 * Filter store.
+	 *
+	 * @param store the store
+	 * @return the observable list
+	 */
+	public ObservableList<Discount> filterStore(String store) {
+		List<Discount> filtered = new ArrayList<Discount>();
+		
+		for (Discount currentItem: this.discountListProperty) {
+			if (currentItem.getDiscountSeller().getSellerName().equalsIgnoreCase(store)) {
 				filtered.add(currentItem);
 			}
 		}
